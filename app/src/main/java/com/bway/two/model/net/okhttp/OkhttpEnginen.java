@@ -3,8 +3,6 @@ package com.bway.two.model.net.okhttp;
 
 import android.util.Log;
 
-import com.bway.two.utils.GenericUtil;
-import com.bway.two.utils.HttpManager;
 import com.bway.two.utils.http.IHttpEngien;
 import com.bway.two.view.IMview.customcallback.CallBack;
 import com.google.gson.Gson;

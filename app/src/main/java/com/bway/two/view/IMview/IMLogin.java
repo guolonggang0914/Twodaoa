@@ -6,5 +6,6 @@ package com.bway.two.view.IMview;
  */
 
 
-public class IMLogin {
+public interface IMLogin {
+
 }

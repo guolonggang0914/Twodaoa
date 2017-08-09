@@ -1,7 +1,7 @@
 package com.bway.two.view.IMview.customcallback;
 
 
-import com.bway.two.utils.GenericUtil;
+import com.bway.two.model.net.okhttp.GenericUtil;
 
 /**
 * 类描述：

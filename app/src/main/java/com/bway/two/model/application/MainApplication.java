@@ -3,7 +3,7 @@ package com.bway.two.model.application;
 import android.app.Application;
 
 import com.bway.two.model.net.okhttp.OkhttpEnginen;
-import com.bway.two.utils.HttpManager;
+import com.bway.two.model.net.okhttp.HttpManager;
 
 /**
  * autor: 李金涛.

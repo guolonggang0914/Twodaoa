@@ -1,4 +1,4 @@
-package com.bway.two.utils;
+package com.bway.two.model.net.okhttp;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
