@@ -1,7 +1,9 @@
-package com.bway.two;
+package com.bway.two.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.bway.two.R;
 
 public class MainActivity extends AppCompatActivity {
 
