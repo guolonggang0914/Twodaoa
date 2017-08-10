@@ -10,12 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bway.two.R;
-import com.bway.two.model.net.okhttp.HttpManager;
-import com.bway.two.view.IMview.customcallback.EntityCallBack;
 import com.bway.two.view.activity.LoginActivity;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @类的用途:
@@ -30,7 +25,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.min_layout,container,false);
+        return inflater.inflate(R.layout.fragmet_min,container,false);
     }
 
     @Override
