@@ -17,6 +17,7 @@ import com.bway.two.R;
 
 public class HomeFragment extends Fragment {
 
+    ////立即头脑
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
