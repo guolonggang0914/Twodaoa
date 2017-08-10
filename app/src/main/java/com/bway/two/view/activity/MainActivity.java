@@ -1,20 +1,28 @@
 package com.bway.two.view.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
+import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.bway.two.R;
 import com.bway.two.model.base.BaseActivity;
+import com.bway.two.view.fragment.HomeFragment;
+import com.bway.two.view.fragment.MineFragment;
+import com.bway.two.view.fragment.NearbyFragment;
+import com.bway.two.view.fragment.RebateFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+
+public class MainActivity extends BaseActivity {
 
 
     @BindView(R.id.frame_content)
@@ -29,7 +37,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     RadioButton radioWode;
     @BindView(R.id.radio_titles)
     RadioGroup radioTitles;
-    private TextView min_login;
+    private List<Fragment> fragments = new ArrayList<>();
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+//    private RadioGroup radioTitles;
 
     @Override
     public int getLayout() {
@@ -38,30 +49,50 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void initView() {
-        min_login = (TextView) findViewById(R.id.min_login);
-        min_login.setOnClickListener(this);
+//        radioTitles = (RadioGroup) findViewById(R.id.radio_titles);
+        ButterKnife.bind(this);
     }
 
     @Override
     public void initData() {
 
+        HomeFragment homeFragment = new HomeFragment();
+        NearbyFragment nearbyFragment = new NearbyFragment();
+        RebateFragment rebateFragment = new RebateFragment();
+        MineFragment mineFragment = new MineFragment();
+        fragments.add(homeFragment);
+        fragments.add(nearbyFragment);
+        fragments.add(rebateFragment);
+        fragments.add(mineFragment);
 
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.min_login:
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                break;
+        fm = getSupportFragmentManager();
+        ft = fm.beginTransaction();
+        for (int i = 0; i < fragments.size(); i++) {
+            ft.add(R.id.frame_content, fragments.get(i));
+            if (i == 0) {
+                ft.show(fragments.get(i));
+            } else {
+                ft.hide(fragments.get(i));
+            }
         }
+        ft.commit();
+        radioTitles.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+                RadioButton rbtn = (RadioButton) findViewById(i);
+                int tag = Integer.parseInt(rbtn.getTag().toString());
+                ft = fm.beginTransaction();
+                for (int j = 0; j < fragments.size(); j++) {
+                    if (j == tag) {
+                        ft.show(fragments.get(j));
+                    } else {
+                        ft.hide(fragments.get(j));
+                    }
+                }
+                ft.commit();
+            }
+        });
+
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
-        ButterKnife.bind(this);
-    }
 }
