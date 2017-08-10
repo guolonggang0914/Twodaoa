@@ -7,18 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bway.two.R;
-
 /**
- *   作者   郭龙刚
- *   @data  2017/08/10
- *   类的用途:返利界面
+ * autor: 李金涛.
+ * date:2017/8/10
  */
 
-public class RebateFragment extends Fragment {
+
+public class NearbyFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_rebate,container,false);
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 }

@@ -7,4 +7,5 @@ package com.bway.two.view.IMview;
 
 
 public interface IMMain<T> {
+
 }
