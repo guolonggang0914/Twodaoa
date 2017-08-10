@@ -1,4 +1,5 @@
 <resources>
+    //
     <string name="app_name">Two道</string>
     <string name="jin_e">累计返利金额 (元)</string>
     <string name="jia_ge">2199.00</string>
