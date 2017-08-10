@@ -3,8 +3,6 @@ package com.bway.two.model.net.okhttp;
 
 import android.util.Log;
 
-import com.bway.two.model.net.okhttp.GenericUtil;
-import com.bway.two.model.net.okhttp.HttpManager;
 import com.bway.two.utils.http.IHttpEngien;
 import com.bway.two.view.IMview.customcallback.CallBack;
 import com.google.gson.Gson;
@@ -17,10 +15,7 @@ import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
-
-import static android.os.Build.VERSION_CODES.M;
 
 /**
  * Created by luccc
@@ -36,6 +31,21 @@ public class OkhttpEnginen implements IHttpEngien {
 
     @Override
     public void get(String url, Map<String, Object> params, final CallBack callBack) {
+        StringBuffer sb = new StringBuffer();
+        if(params!=null) {
+            for (Map.Entry<String, Object> entry : params.entrySet()) {
+                sb.append("&")
+                        .append(entry.getKey())
+                        .append("=")
+                        .append(entry.getValue());
+            }
+            if (!url.contains("?")) {
+                sb.replace(0, 1, "?");//把&替换成？
+            } else if (url.endsWith("?")) {
+                sb.deleteCharAt(0);// 把第一个删除
+            }
+        }
+            url = url+sb.toString();
         Request request = new Request.Builder()
                 .url(url)
                 .get()
