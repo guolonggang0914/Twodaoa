@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Two道</string>
+    <string name="jin_e">累计返利金额 (元)</string>
+    <string name="jia_ge">2199.00</string>
+    <string name="qi_shu">带返期数 (笔)</string>
+    <string name="num_shu">5</string>
+    <string name="query_num">记录查询</string>
+    <string name="bang_ding">已绑定</string>
 </resources>
