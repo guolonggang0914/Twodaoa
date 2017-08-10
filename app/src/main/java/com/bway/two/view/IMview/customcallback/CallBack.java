@@ -1,7 +1,7 @@
 package com.bway.two.view.IMview.customcallback;
 
 /**
- * Created by luccc
+ * Created by WuXirui
  * Create Time: 2017/7/19
  * Description:
  */
