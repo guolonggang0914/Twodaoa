@@ -8,7 +8,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public int getLayout() {
-        return R.layout.activity_main;
+        return R.layout.fragment_home;
     }
 
     @Override
