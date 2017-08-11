@@ -28,6 +28,7 @@ public class NearbyFragment extends Fragment {
     Unbinder unbinder;
     private View view;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
