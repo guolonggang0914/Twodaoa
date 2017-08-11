@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 import com.bway.two.R;
 
 /**
- * Created by 卢程
- * 2017/8/10.
+ * autor: 李金涛.
+ * date:2017/8/10
  */
 
-public class HomeFragment extends Fragment {
+
+public class NearbyFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_nearby,container,false);
     }
 }

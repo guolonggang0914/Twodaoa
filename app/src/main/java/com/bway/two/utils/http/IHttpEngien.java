@@ -1,11 +1,11 @@
-package com.bway.two.utils.http;
 
+package com.bway.two.utils.http;
 import com.bway.two.view.IMview.customcallback.CallBack;
 
 import java.util.Map;
 
 /**
- * Created by luccc
+ * Created by WuXirui
  * Create Time: 2017/7/19
  * Description:
  */
