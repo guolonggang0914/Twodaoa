@@ -7,4 +7,6 @@
     <string name="num_shu">5</string>
     <string name="query_num">记录查询</string>
     <string name="bang_ding">已绑定</string>
+    <string name="dunxin">短信验证登录</string>
+    <string name="number_shixiang">未注册的手机号登录成功后将自动注册为大道用户</string>
 </resources>

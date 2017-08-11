@@ -92,7 +92,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 finish();
                 break;
             case  R.id.login_phone:
-
+                startActivity(new Intent(LoginActivity.this,NumberActivity.class));
                 break;
             case  R.id.login_weibo:
 
