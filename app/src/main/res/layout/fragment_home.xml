@@ -8,8 +8,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44.5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:gravity="center"
         android:background="#ccc"
         android:orientation="horizontal">
@@ -154,6 +152,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp">
                         <LinearLayout
+                            android:id="@+id/fragment_home_fuli"
                             android:gravity="center"
                             android:layout_weight="1.5"
                             android:layout_width="0dp"
@@ -184,6 +183,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/fragment_home_dadao"
                         android:layout_weight="1"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -221,13 +221,12 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#f2f4f5" />
+            <include layout="@layout/include_nearby_shops"/>
+            <include layout="@layout/include_tablayout"/>
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
-
 </LinearLayout>
