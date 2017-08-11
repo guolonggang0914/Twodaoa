@@ -28,6 +28,7 @@ public class NearbyFragment extends Fragment {
     Unbinder unbinder;
     private View view;
 
+    String url = "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=92e00c9b8f5494ee8722081f15ce87c3/29381f30e924b899c83ff41c6d061d950a7bf697.jpg";
 
     @Nullable
     @Override
@@ -35,6 +36,9 @@ public class NearbyFragment extends Fragment {
         SDKInitializer.initialize(getActivity().getApplicationContext());
         view = inflater.inflate(R.layout.fragment_nearby, container, false);
         unbinder = ButterKnife.bind(this, view);
+//        YuanjiaoImageView imageView = view.findViewById(R.id.image_ceshi);
+//        Glide.with(getActivity()).load(url).into(imageView);
+//        ImageUtils.newInstance().disPlay(getActivity(),url,imageView);
         return view;
     }
 
