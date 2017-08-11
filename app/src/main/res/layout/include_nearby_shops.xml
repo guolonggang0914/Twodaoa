@@ -39,7 +39,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <com.bway.two.utils.ImageShowUtils.YuanjiaoImageView
-                image:src="@drawable/xiaoxi"
+                android:src="@drawable/xiaoxi"
+                image:type = "round"
+                image:borderRadius="8dp"
                 android:layout_width="112dp"
                 android:layout_height="109dp" />
             <TextView
@@ -65,7 +67,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <com.bway.two.utils.ImageShowUtils.YuanjiaoImageView
-                image:src="@drawable/xiaoxi"
+                android:src="@drawable/xiaoxi"
+                image:type = "round"
+                image:borderRadius="8dp"
                 android:layout_width="112dp"
                 android:layout_height="109dp" />
             <TextView
@@ -90,7 +94,9 @@
             android:layout_width="0dp"
             android:layout_height="match_parent">
             <com.bway.two.utils.ImageShowUtils.YuanjiaoImageView
-                image:src="@drawable/xiaoxi"
+                image:type = "round"
+                image:borderRadius="8dp"
+                android:src="@drawable/xiaoxi"
                 android:layout_width="112dp"
                 android:layout_height="109dp" />
             <TextView

@@ -113,6 +113,7 @@
             >
 
             <com.bway.two.utils.ImageShowUtils.YuanjiaoImageView
+                android:id="@+id/image_ceshi"
                 android:layout_width="112dp"
                 android:layout_height="109dp"
                 zhy:borderRadius="8dp"
