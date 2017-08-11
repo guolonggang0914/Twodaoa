@@ -31,11 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote"></service>
+        <activity android:name=".view.activity.LoginActivity" />
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -43,7 +39,7 @@
 
         <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.CityCheckActivity"></activity>
+        <activity android:name=".view.activity.NumberActivity"></activity>
     </application>
 
 </manifest>
