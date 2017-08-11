@@ -16,6 +16,7 @@
         android:layout_marginLeft="@dimen/x20"
         android:layout_marginTop="@dimen/x20"
         android:src="@mipmap/quxiao"
+        android:id="@+id/quxiao"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -47,15 +48,15 @@
         />
     <Button
         android:layout_width="@dimen/x600"
-        android:layout_height="wrap_content"
-        android:text="微信登录"
+        android:layout_height="@dimen/x100"
+        android:text="微博登录"
         android:layout_gravity="center"
-        android:background="#4BBD00"
+        android:background="#DE5C25"
         android:layout_marginTop="@dimen/x36"
         android:textSize="@dimen/x40"
-        android:textColor="#ffffff"
         android:gravity="center"
-        android:id="@+id/login_weixin"
+        android:drawableLeft="@drawable/weibo"
+        android:id="@+id/login_weibo"
         />
     <TextView
         android:layout_width="match_parent"
@@ -82,8 +83,8 @@
         android:layout_height="wrap_content"
         android:text="使用其他方式登录"
         android:gravity="center"
-        android:textColor="#19A15F"
-        android:textSize="@dimen/x36"
+        android:textColor="#2B622C"
+        android:textSize="@dimen/x30"
         android:layout_marginTop="@dimen/x80"
         android:id="@+id/login_other"
         />
