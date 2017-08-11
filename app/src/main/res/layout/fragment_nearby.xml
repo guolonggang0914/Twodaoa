@@ -26,6 +26,7 @@
                 android:background="@color/colorWhite"
                 />
         </RelativeLayout>
+
        <include layout="@layout/includ_nearby_wangpu"></include>
         
     </LinearLayout>
