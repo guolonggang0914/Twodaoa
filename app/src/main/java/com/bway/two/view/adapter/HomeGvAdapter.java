@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.baidu.platform.comapi.map.E;
 import com.bway.two.R;
+import com.bway.two.model.bean.Foods;
 
 import java.util.List;
 
@@ -18,10 +19,10 @@ import java.util.List;
  */
 
 public class HomeGvAdapter extends BaseAdapter {
-    private List<String> mList;
+    private List<Foods> mList;
     private Context context;
 
-    public HomeGvAdapter(List<String> list, Context context) {
+    public HomeGvAdapter(List<Foods> list, Context context) {
         mList = list;
         this.context = context;
     }
@@ -49,7 +50,8 @@ public class HomeGvAdapter extends BaseAdapter {
             convertView = View.inflate(context, R.layout.fragment_home_gvitem, null);
             Viewholder.image = convertView.findViewById(R.id.gv_image);
             Viewholder.text = convertView.findViewById(R.id.gv_text);
-            Viewholder.text.setText(mList.get(position));
+            Viewholder.text.setText(mList.get(position).getMessage());
+            Viewholder.image.setImageResource(mList.get(position).getImageid());
             convertView.setTag(Viewholder);
         } else {
             Viewholder = (ViewHolder) convertView.getTag();

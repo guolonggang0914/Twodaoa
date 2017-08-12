@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.bway.two.R;
+import com.bway.two.model.bean.Foods;
 import com.bway.two.view.adapter.HomeGvAdapter;
 
 import java.util.ArrayList;
@@ -44,10 +45,17 @@ public class HomeFragmentVp extends Fragment {
     }
 
     private void initData() {
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(url+i);
-        }
+        ArrayList<Foods> list = new ArrayList<>();
+        list.add(new Foods("luccc", R.mipmap.food1));
+        list.add(new Foods("luccc", R.mipmap.food2));
+        list.add(new Foods("luccc", R.mipmap.food3));
+        list.add(new Foods("luccc", R.mipmap.food4));
+        list.add(new Foods("luccc", R.mipmap.food5));
+        list.add(new Foods("luccc", R.mipmap.food6));
+        list.add(new Foods("luccc", R.mipmap.food7));
+        list.add(new Foods("luccc", R.mipmap.food8));
+        list.add(new Foods("luccc", R.mipmap.food9));
+        list.add(new Foods("luccc", R.mipmap.food10));
         HomeGvAdapter homeGvAdapter = new HomeGvAdapter(list, getActivity());
         mGridview.setAdapter(homeGvAdapter);
     }

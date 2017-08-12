@@ -141,15 +141,15 @@ public class HomeFragment extends Fragment {
 
     private void loadBanner() {
 
-        images.add("http://img1.yulin520.com/news/VQA5D2ZGFFR0O5E1JWUK.jpg#488_597");
-        images.add("http://img1.yulin520.com/news/QQ7914TLXFR0OMOU5OW6.jpg#628_640");
-        images.add("http://img1.yulin520.com/news/ZQ8P3878YFR0OMXSC079.jpg#723_599");
-        images.add("http://www.yulin520.com/a2a/h5/impress/i1/348?a=1502452006447");
+        images.add("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1931850890,4215733472&fm=26&gp=0.jpg");
+        images.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=25113326,1226603612&fm=26&gp=0.jpg");
+        images.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2710680424,3876257908&fm=26&gp=0.jpg");
+        images.add("https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=809943721,3434341815&fm=26&gp=0.jpg");
 
         mBanner.setImageLoader(new GlideImagerloader());
         mBanner.setImages(images);
-        mBanner.setBannerTitles(images);
-        mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+        mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR);
+        mBanner.setIndicatorGravity(BannerConfig.CENTER);
         mBanner.start();
     }
 

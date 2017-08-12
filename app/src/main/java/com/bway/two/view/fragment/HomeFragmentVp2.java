@@ -42,7 +42,6 @@ public class HomeFragmentVp2 extends Fragment {
     }
 
     private void initData() {
-
     }
 
     public static HomeFragmentVp2 getInstense(String url) {
