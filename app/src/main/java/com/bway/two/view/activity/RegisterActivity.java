@@ -46,10 +46,10 @@ public class RegisterActivity extends BaseActivity {
     @Override
     public void initData() {
         presenter = new RegisterPresenter(this);
-        String phone = zuce_phone.getText().toString().trim();
         String yanzheng = zhuce_yanzheng.getText().toString().trim();
         String pwd = zhuce_pwd.getText().toString().trim();
 
-        presenter.getRegsister(phone,yanzheng,pwd,zhuce_fasong,zhuce_tijiao,zhuce_tongyi);
+        presenter.getRegsister(zuce_phone,yanzheng,pwd,zhuce_fasong,zhuce_tijiao,zhuce_tongyi);
     }
+
 }

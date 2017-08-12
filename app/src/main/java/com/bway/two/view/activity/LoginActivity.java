@@ -66,6 +66,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         RadioButton min_qq = view.findViewById(R.id.min_qq);
         RadioButton  min_weixin = view.findViewById(R.id.min_weixin);
         RadioButton min_zhanghao = view.findViewById(R.id.min_zhanghao);
+        min_zhanghao.setOnClickListener(this);
         alertDialog.setCanceledOnTouchOutside(false);
         Window dialogWindow = alertDialog.getWindow();
         dialogWindow.setGravity(Gravity.HORIZONTAL_GRAVITY_MASK | Gravity.BOTTOM);
@@ -96,6 +97,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case  R.id.login_weibo:
 
+                break;
+            case  R.id.min_zhanghao:
+            startActivity(new Intent(LoginActivity.this,ZhangHaoLoginActivity.class));
                 break;
         }
     }

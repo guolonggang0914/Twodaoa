@@ -49,9 +49,8 @@ public class NumberActivity extends BaseActivity implements View.OnClickListener
         numberQita.setOnClickListener(this);
         numberFh.setOnClickListener(this);
         presenter = new MessageLoginPresenter(this);
-        String phone = numberPhone.getText().toString().trim();
         String yanzheng = numberYanzheng.getText().toString().trim();
-        presenter.getMessageLoginData(phone, numberHuoqu, yanzheng, numberLogin);
+        presenter.getMessageLoginData(numberPhone, numberHuoqu, yanzheng, numberLogin);
     }
 
     @Override
@@ -61,7 +60,8 @@ public class NumberActivity extends BaseActivity implements View.OnClickListener
                 finish();
                 break;
             case R.id.number_qita:
-                Intent intent = new Intent();
+                startActivity(new Intent(NumberActivity.this,ShoushiPwdActivity.class));
+
                 break;
         }
     }

@@ -39,7 +39,9 @@
 
         <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.RegisterActivity" />
-        <activity android:name=".view.activity.NumberActivity"></activity>
+        <activity android:name=".view.activity.NumberActivity" />
+        <activity android:name=".view.activity.ShoushiPwdActivity" />
+        <activity android:name=".view.activity.ZhangHaoLoginActivity"></activity>
     </application>
 
 </manifest>
