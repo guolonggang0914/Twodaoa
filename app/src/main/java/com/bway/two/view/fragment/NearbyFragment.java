@@ -25,9 +25,9 @@ import butterknife.Unbinder;
 
 public class NearbyFragment extends Fragment {
 
-    Unbinder unbinder;
-    @BindView(R.id.map_top)
-    MapView mapTop;
+//    Unbinder unbinder;
+//    @BindView(R.id.map_top)
+//    MapView mapTop;
     @BindView(R.id.image_ceshi)
     YuanjiaoImageView imageCeshi;
     private View view;
@@ -38,9 +38,9 @@ public class NearbyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         SDKInitializer.initialize(getActivity().getApplicationContext());
         view = inflater.inflate(R.layout.fragment_nearby, container, false);
-        unbinder = ButterKnife.bind(this, view);
-        //去掉百度地图的放大缩小图标
-        mapTop.showZoomControls(false);
+//        unbinder = ButterKnife.bind(this, view);
+//        //去掉百度地图的放大缩小图标
+//        mapTop.showZoomControls(false);
         mLocationClient = new LocationClient(getActivity().getApplicationContext());
         //声明LocationClient类
         mLocationClient.registerLocationListener( myListener );
@@ -61,16 +61,16 @@ public class NearbyFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+//        unbinder.unbind();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
         //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
-        if(mapTop!=null){
-            mapTop.onDestroy();
-        }
+//        if(mapTop!=null){
+//            mapTop.onDestroy();
+//        }
 
     }
 
@@ -78,13 +78,13 @@ public class NearbyFragment extends Fragment {
     public void onResume() {
         super.onResume();
         //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理
-        mapTop.onResume();
+//        mapTop.onResume();
     }
 
     @Override
     public void onPause() {
         super.onPause();
         //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理
-        mapTop.onPause();
+//        mapTop.onPause();
     }
 }
