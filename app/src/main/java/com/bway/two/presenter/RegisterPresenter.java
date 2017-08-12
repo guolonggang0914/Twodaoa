@@ -7,10 +7,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 注册逻辑处理类
@@ -41,9 +44,10 @@ public class RegisterPresenter {
     }
 
 
-    public void getRegsister(final String phone, final String yanzheng, final String pwd, final Button fasong, final Button tijiao, final CheckBox tongyi) {
+    public void getRegsister(final EditText phone, final String yanzheng, final String pwd, final Button fasong, final Button tijiao, final CheckBox tongyi) {
         this.fs = fasong;
         timer = new Timer();
+        final String s = phone.getText().toString().trim();
         fasong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,15 +62,22 @@ public class RegisterPresenter {
                 },0, 1000);
             }
         });
+
        tijiao.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               if (TextUtils.isEmpty(phone)&&TextUtils.isEmpty(yanzheng)&&TextUtils.isEmpty(pwd)&&!tongyi.isChecked()){
-                   Toast.makeText(context,"参数不能为空",Toast.LENGTH_SHORT).show();
-               }else {
-                   Toast.makeText(context,"注册成功",Toast.LENGTH_SHORT).show();
+               if (phone.length() != 11) {
+                   Toast.makeText(context, "手机号位数不够", Toast.LENGTH_SHORT).show();
+                   return;
                }
+                 if (TextUtils.isEmpty(s)&&TextUtils.isEmpty(yanzheng)&&TextUtils.isEmpty(pwd)&&!tongyi.isChecked()){
+                   Toast.makeText(context,"参数不能为空",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+               Toast.makeText(context,"注册成功",Toast.LENGTH_SHORT).show();
+
            }
        });
     }
+
 }

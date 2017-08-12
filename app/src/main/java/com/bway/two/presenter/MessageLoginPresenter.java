@@ -6,6 +6,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Timer;
@@ -36,16 +37,22 @@ public class MessageLoginPresenter {
         this.context = context;
     }
 
-    public void  getMessageLoginData(final String phone, Button huoqu, final String yanzhengma, Button login){
+    public void  getMessageLoginData(final EditText phone, Button huoqu, final String yanzhengma, Button login){
        this.hq=huoqu;
+        final String s = phone.getText().toString().trim();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(phone)&&TextUtils.isEmpty(yanzhengma)){
-                    Toast.makeText(context,"参数不对",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(context,"登录成功",Toast.LENGTH_SHORT).show();
+                if (phone.length() != 11) {
+                    Toast.makeText(context, "手机号位数不够", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+                if (TextUtils.isEmpty(s)&&TextUtils.isEmpty(yanzhengma)){
+                    Toast.makeText(context,"参数不对",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                    Toast.makeText(context,"登录成功",Toast.LENGTH_SHORT).show();
+
             }
         });
         final Timer timer = new Timer();
