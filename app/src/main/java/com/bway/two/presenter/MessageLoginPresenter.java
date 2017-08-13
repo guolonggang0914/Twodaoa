@@ -27,8 +27,10 @@ public class MessageLoginPresenter {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             hq.setText("重新发送"+(count));
+            hq.setClickable(false);
             if (count==0){
                 hq.setText("重新获取");
+                hq.setClickable(true);
             }
         }
     };
