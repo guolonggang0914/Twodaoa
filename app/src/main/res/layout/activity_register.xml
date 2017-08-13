@@ -26,102 +26,103 @@
             android:src="@drawable/tupiao" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x60"
+            android:background="#FFFFFF"
             android:orientation="horizontal">
 
             <EditText
-                android:layout_marginLeft="15dp"
+                android:maxLength="11"
+                android:numeric="integer"
+                android:id="@+id/zuce_phone"
                 android:layout_width="330dp"
                 android:layout_height="44dp"
+                android:layout_marginLeft="8dp"
                 android:background="#FFFFFF"
-                android:hint="    请输入新的手机号"
-                android:textColorHint="#DBDBDB"
-                android:id="@+id/zuce_phone"
-                />
+                android:hint="请输入新的手机号"
+                android:textColorHint="#DBDBDB" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/x72"
-                android:layout_marginTop="@dimen/x20"
+                android:layout_marginRight="53dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/shouji" />
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/x20"
             android:orientation="horizontal">
 
             <EditText
-                android:layout_marginLeft="15dp"
-                android:layout_width="200dp"
-                android:layout_height="44dp"
-                android:background="#FFFFFF"
-                android:hint="    请输入验证码"
-                android:textColorHint="#DBDBDB"
                 android:id="@+id/zhuce_yanzheng"
-                />
+                android:layout_width="280dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:hint="  请输入验证码"
+                android:textColorHint="#DBDBDB" />
 
             <Button
-                android:layout_width="100dp"
+                android:id="@+id/zhuce_fasong"
+                android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:background="#ffffff"
                 android:text="获取验证码"
-                android:textColor="#DBDBDB"
-                android:id="@+id/zhuce_fasong"
-                />
-        </RelativeLayout>
+                android:textColor="#DBDBDB" />
+        </LinearLayout>
+
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
+            android:background="#FFFFFF"
             android:orientation="horizontal">
 
             <EditText
-                android:layout_marginLeft="15dp"
+                android:id="@+id/zhuce_pwd"
                 android:layout_width="330dp"
                 android:layout_height="44dp"
+                android:layout_marginLeft="15dp"
                 android:background="#FFFFFF"
-                android:hint="  设置密码"
-                android:textColorHint="#DBDBDB"
-                android:inputType="numberPassword"
-                android:id="@+id/zhuce_pwd"
-                />
+                android:hint="设置密码"
+                android:inputType="textPassword"
+                android:textColorHint="#DBDBDB" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/x72"
+                android:layout_marginRight="50dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/biyan" />
         </RelativeLayout>
+
         <CheckBox
+            android:id="@+id/zhuce_tongyi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我已阅读并同意大道用户协议"
-            android:textColor="#333333"
-            android:layout_marginTop="16dp"
             android:layout_marginLeft="15dp"
-            android:id="@+id/zhuce_tongyi"
-            />
+            android:layout_marginTop="16dp"
+            android:text="我已阅读并同意大道用户协议"
+            android:textColor="#333333" />
+
         <Button
+            android:id="@+id/zhuce_tijiao"
             android:layout_width="330dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="11dp"
             android:background="#ffffff"
             android:text="提交"
-            android:textSize="@dimen/x36"
             android:textColor="#666666"
-            android:layout_gravity="center"
-            android:id="@+id/zhuce_tijiao"
-            />
+            android:textSize="@dimen/x36" />
     </LinearLayout>
 
 

@@ -63,3 +63,12 @@ dependencies {
     compile 'com.youth.banner:banner:1.4.9'
 
 }
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
+}
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
+}
