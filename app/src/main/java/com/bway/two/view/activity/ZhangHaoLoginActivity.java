@@ -39,7 +39,7 @@ public class ZhangHaoLoginActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public void initData() {
-zhanghaoFh.setOnClickListener(this);
+         zhanghaoFh.setOnClickListener(this);
     }
 
 
