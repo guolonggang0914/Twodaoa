@@ -1,8 +1,16 @@
 package com.bway.two.view.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.bway.two.R;
+import com.bway.two.model.bean.RcData;
+
+import java.util.List;
+
 
 /**
  * Created by 卢程
@@ -11,10 +19,22 @@ import android.view.ViewGroup;
 
 public class HomeRcAdapter extends RecyclerView.Adapter<HomeRcAdapter.ViewHolder> {
 
+    private Context context;
+    private List<RcData> mList;
+
+    public HomeRcAdapter(Context context, List<RcData> mList) {
+        this.context = context;
+        this.mList = mList;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(context).inflate(R.layout.fragment_home_rcitem, parent, false);
+        ViewHolder holder = new ViewHolder(view);
+        return holder;
     }
+
+
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
