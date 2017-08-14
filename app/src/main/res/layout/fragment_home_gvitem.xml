@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/gv_image"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_width="41.5dp"
+        android:layout_height="41.5dp" />
+    <TextView
+        android:id="@+id/gv_text"
+        android:layout_marginTop="5dp"
+        android:textSize="11dp"
+        android:gravity="center"
+        android:textColor="#666666"
+        android:layout_width="41.5dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>
