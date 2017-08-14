@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorHome"
     tools:context="com.bway.two.view.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+   <FrameLayout
+       android:id="@+id/frame_content"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1">
+   </FrameLayout>
+    <RadioGroup
+        android:id="@+id/radio_titles"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="@dimen/x9"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x50"
+        android:paddingRight="@dimen/x50"
+        >
 
-</android.support.constraint.ConstraintLayout>
+        <RadioButton
+            android:id="@+id/radio_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home"
+            android:textColor="@color/color"
+            android:text="首页"
+            android:checked="true"
+            android:gravity="center"
+            android:tag="0"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_nearby"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/nearby"
+            android:textColor="@color/color"
+            android:gravity="center"
+            android:text="附近"
+            android:tag="1"/>
+
+        <RadioButton
+            android:id="@+id/radio_fanli"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/fanli"
+            android:textColor="@color/color"
+            android:text="返利"
+            android:gravity="center"
+            android:tag="2"
+            />
+        <RadioButton
+            android:id="@+id/radio_wode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/wode"
+            android:textColor="@color/color"
+            android:text="我的"
+            android:gravity="center"
+            android:tag="3"
+            />
+    </RadioGroup>
+
+</LinearLayout>

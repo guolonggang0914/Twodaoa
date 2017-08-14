@@ -15,7 +15,7 @@ import com.bway.two.R;
  *   类的用途:返利界面
  */
 
-public class RebateFragment extends Fragment{
+public class RebateFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
