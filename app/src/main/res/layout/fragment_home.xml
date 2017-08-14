@@ -8,9 +8,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44.5dp"
-        android:gravity="center"
         android:background="#ccc"
+        android:gravity="center"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/fragment_home_cityselector"
             android:layout_width="53dp"
@@ -91,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <com.youth.banner.Banner
                 android:id="@+id/fragment_home_banner"
                 android:layout_width="match_parent"
@@ -98,8 +100,8 @@
                 android:layout_gravity="center_horizontal"
                 banners:indicator_height="7dp"
                 banners:indicator_margin="8dp"
-                banners:indicator_width="7dp">
-            </com.youth.banner.Banner>
+                banners:indicator_width="7dp"></com.youth.banner.Banner>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
@@ -108,124 +110,140 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/fragment_home_viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="167dp">
-            </android.support.v4.view.ViewPager>
+                android:layout_height="167dp"></android.support.v4.view.ViewPager>
             /
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
                 android:background="#f2f4f5" />
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="183dp">
+                android:layout_height="183dp"
+                android:orientation="horizontal">
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
                     <TextView
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="59.5dp"
-                        android:text="旺铺推荐"
-                        android:ems="1"
-                        android:layout_marginLeft="30dp"
-                        android:textSize="18sp"
-                        android:lineSpacingExtra="8dp"
-                        android:textColor="#333333"
                         android:layout_width="18dp"
-                        android:layout_height="110dp" />
+                        android:layout_height="110dp"
+                        android:layout_marginBottom="59.5dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:ems="1"
+                        android:lineSpacingExtra="8dp"
+                        android:text="旺铺推荐"
+                        android:textColor="#333333"
+                        android:textSize="18sp" />
                 </LinearLayout>
+
                 <TextView
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:background="#f2f4f5" />
+
                 <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp">
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
                         <LinearLayout
-                            android:gravity="center"
-                            android:layout_weight="1.5"
+                            android:id="@+id/fragment_home_fuli"
                             android:layout_width="0dp"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
                             <TextView
-                                android:textColor="#333333"
-                                android:textSize="18dp"
+                                android:layout_width="84dp"
+                                android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
                                 android:lineSpacingMultiplier="1.2"
-                                android:layout_width="84dp"
                                 android:text="暖心福利"
-                                android:layout_height="wrap_content" />
+                                android:textColor="#333333"
+                                android:textSize="18dp" />
 
                             <TextView
-                                android:textColor="#999999"
-                                android:textSize="11dp"
+                                android:layout_width="84dp"
+                                android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
                                 android:text="新用户优惠"
-                                android:layout_width="84dp"
-                                android:layout_height="wrap_content" />
+                                android:textColor="#999999"
+                                android:textSize="11dp" />
                         </LinearLayout>
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:background="@color/colorAccent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorAccent" />
 
                     </LinearLayout>
+
                     <LinearLayout
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
+                        android:id="@+id/fragment_home_dadao"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp">
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
                         <LinearLayout
-                            android:gravity="center"
-                            android:layout_weight="1.5"
                             android:layout_width="0dp"
-                            android:orientation="vertical"
-                            android:layout_height="match_parent">
-                            <TextView
-                                android:textColor="#333333"
-                                android:textSize="18dp"
-                                android:gravity="center_vertical"
-                                android:lineSpacingMultiplier="1.6"
-                                android:layout_width="84dp"
-                                android:text="大道时刻"
-                                android:layout_height="wrap_content" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:textColor="#999999"
-                                android:textSize="11dp"
-                                android:gravity="center_vertical"
-                                android:text="新功能上线"
-                                android:lineSpacingMultiplier="1.6"
                                 android:layout_width="84dp"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:lineSpacingMultiplier="1.6"
+                                android:text="大道时刻"
+                                android:textColor="#333333"
+                                android:textSize="18dp" />
+
+                            <TextView
+                                android:layout_width="84dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:lineSpacingMultiplier="1.6"
+                                android:text="新功能上线"
+                                android:textColor="#999999"
+                                android:textSize="11dp" />
                         </LinearLayout>
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:background="@color/colorPrimaryDark"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimaryDark" />
 
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#f2f4f5" />
+
+            <include layout="@layout/include_nearby_shops" />
+
+            <include layout="@layout/include_tablayout" />
         </LinearLayout>
     </ScrollView>
-
-
-
-
-
-
 </LinearLayout>
