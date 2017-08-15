@@ -12,9 +12,15 @@
         apps:tabBackground="@drawable/tablayout_selector"
         apps:tabIndicatorHeight="0dp"></android.support.design.widget.TabLayout>
 
-    <com.bway.two.utils.ImageShowUtils.MyViewPager
-        android:id="@+id/fragment_home_viewpager2"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </com.bway.two.utils.ImageShowUtils.MyViewPager>
+        android:layout_height="match_parent"
+        apps:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <com.bway.two.utils.ImageShowUtils.MyViewPager
+            android:id="@+id/fragment_home_viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.bway.two.utils.ImageShowUtils.MyViewPager>
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

@@ -5,277 +5,243 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="44.5dp"
-        android:background="#ccc"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <include layout="@layout/include_home_top" />
 
-        <TextView
-            android:id="@+id/fragment_home_cityselector"
-            android:layout_width="53dp"
-            android:layout_height="19dp"
-            android:background="@drawable/home_city"
-            android:drawableRight="@drawable/xiala"
-            android:gravity="center"
-            android:text="北京"
-            android:textColor="#333333"
-            android:textSize="14sp" />
-
-        <LinearLayout
-            android:id="@+id/fragment_home_search"
-            android:layout_width="183dp"
-            android:layout_height="21dp"
-            android:layout_marginLeft="28.5dp"
-            android:background="@drawable/home_search"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:src="@mipmap/ic_home_nav_search_normal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="15.5dp"
-                android:gravity="center_vertical"
-                android:text="麻辣小龙虾"
-                android:textColor="#999999"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/fragment_home_xiaoxi"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/home_yuan"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/xiaoxi" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/fragment_home_saosao"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="2.5dp"
-            android:background="@drawable/home_yuan"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/saosao" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <ScrollView
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.youth.banner.Banner
-                android:id="@+id/fragment_home_banner"
-                android:layout_width="match_parent"
-                android:layout_height="225dp"
-                android:layout_gravity="center_horizontal"
-                banners:indicator_height="7dp"
-                banners:indicator_margin="8dp"
-                banners:indicator_width="7dp"></com.youth.banner.Banner>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#f2f4f5" />
+            android:layout_height="wrap_content"
+            android:background="#fff">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="167dp"
-                android:orientation="vertical">
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/fragment_home_viewpager"
-                    android:layout_weight="1"
-                    android:paddingTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"></android.support.v4.view.ViewPager>
-
-                <RadioGroup
-                    android:gravity="center"
-                    android:layout_marginTop="9dp"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/gv_rad1"
-                        android:button="@null"
-                        android:background="@drawable/myuan"
-                        android:layout_width="7dp"
-                        android:layout_height="7dp" />
-
-                    <RadioButton
-                        android:id="@+id/gv_rad2"
-                        android:button="@null"
-                        android:background="@drawable/nyuan"
-                        android:layout_marginLeft="10dp"
-                        android:layout_width="7dp"
-                        android:layout_height="7dp" />
-
-                </RadioGroup>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#f2f4f5" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="183dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                banners:layout_scrollFlags="scroll">
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:background="@mipmap/xiaomai"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x361">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/fragment_home_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="225dp"
+                            android:layout_gravity="center_horizontal"
+                            banners:indicator_height="7dp"
+                            banners:indicator_margin="8dp"
+                            banners:indicator_width="7dp"></com.youth.banner.Banner>
+                    </RelativeLayout>
+
 
                     <TextView
-                        android:layout_width="18dp"
-                        android:layout_height="110dp"
-                        android:layout_marginBottom="59.5dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="30dp"
-                        android:ems="1"
-                        android:lineSpacingExtra="8dp"
-                        android:text="旺铺推荐"
-                        android:textColor="#333333"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:background="#f2f4f5" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#f2f4f5" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="167dp"
+                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:id="@+id/fragment_home_fuli"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.5"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="84dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:lineSpacingMultiplier="1.2"
-                                android:text="暖心福利"
-                                android:textColor="#333333"
-                                android:textSize="18dp" />
-
-                            <TextView
-                                android:layout_width="84dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:text="新用户优惠"
-                                android:textColor="#999999"
-                                android:textSize="11dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/fragment_home_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:background="@mipmap/food9" />
+                            android:paddingTop="10dp"></android.support.v4.view.ViewPager>
 
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/gv_rad1"
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:background="@drawable/myuan"
+                                android:button="@null" />
+
+                            <RadioButton
+                                android:id="@+id/gv_rad2"
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/nyuan"
+                                android:button="@null" />
+
+                        </RadioGroup>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/fragment_home_dadao"
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="10dp"
+                        android:background="#f2f4f5" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="183dp"
                         android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1.5"
-                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:background="@mipmap/xiaomai"
                             android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="84dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:lineSpacingMultiplier="1.6"
-                                android:text="大道时刻"
+                                android:layout_width="18dp"
+                                android:layout_height="110dp"
+                                android:layout_marginBottom="59.5dp"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="30dp"
+                                android:ems="1"
+                                android:lineSpacingExtra="8dp"
+                                android:text="旺铺推荐"
                                 android:textColor="#333333"
-                                android:textSize="18dp" />
-
-                            <TextView
-                                android:layout_width="84dp"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:lineSpacingMultiplier="1.6"
-                                android:text="新功能上线"
-                                android:textColor="#999999"
-                                android:textSize="11dp" />
+                                android:textSize="18sp" />
                         </LinearLayout>
 
-                        <ImageView
+                        <TextView
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#f2f4f5" />
+
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:background="@mipmap/food7" />
+                            android:orientation="vertical">
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/fragment_home_fuli"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="84dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:lineSpacingMultiplier="1.2"
+                                        android:text="暖心福利"
+                                        android:textColor="#333333"
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:layout_width="84dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:text="新用户优惠"
+                                        android:textColor="#999999"
+                                        android:textSize="11dp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@mipmap/food9" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/fragment_home_dadao"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1.5"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="84dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:lineSpacingMultiplier="1.6"
+                                        android:text="大道时刻"
+                                        android:textColor="#333333"
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:layout_width="84dp"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:lineSpacingMultiplier="1.6"
+                                        android:text="新功能上线"
+                                        android:textColor="#999999"
+                                        android:textSize="11dp" />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@mipmap/food7" />
+
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#f2f4f5" />
+
+                    <include layout="@layout/include_nearby_shops" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
-            <TextView
+            <android.support.design.widget.TabLayout
+                android:id="@+id/fragment_home_tablayout"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#f2f4f5" />
+                android:layout_height="44dp"
+                banners:tabBackground="@drawable/tablayout_selector"
+                banners:tabIndicatorHeight="0dp"></android.support.design.widget.TabLayout>
 
-            <include layout="@layout/include_nearby_shops" />
 
-            <include layout="@layout/include_tablayout" />
-        </LinearLayout>
-    </ScrollView>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            banners:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <com.bway.two.utils.ImageShowUtils.MyViewPager
+                android:id="@+id/fragment_home_viewpager2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.bway.two.utils.ImageShowUtils.MyViewPager>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
 </LinearLayout>

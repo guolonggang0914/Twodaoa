@@ -37,6 +37,10 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/mta-sdk-1.6.2.jar')
+    compile files('libs/open_sdk_r5793.jar')
+    compile files('libs/wechat-sdk-android-with-mta-1.0.2.jar')
+    compile files('libs/pinyin4j-2.5.0.jar')
 }
 buildscript {
     repositories {
@@ -61,5 +65,10 @@ dependencies {
     compile 'com.android.support:design:26+'
     compile files('libs/BaiduLBS_Android.jar')
     compile 'com.youth.banner:banner:1.4.9'
-
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
+}
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
 }

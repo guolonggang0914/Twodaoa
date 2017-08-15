@@ -1,6 +1,7 @@
 package com.bway.two.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -8,16 +9,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bway.two.R;
 import com.bway.two.utils.ImageShowUtils.MyViewPager;
+import com.bway.two.view.activity.CityCheckActivity;
 import com.bway.two.view.adapter.HomeVpAdapter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -30,8 +34,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
-import static com.baidu.location.d.j.v;
 
 /**
  * Created by 卢程
@@ -65,6 +67,8 @@ public class HomeFragment extends Fragment {
     RadioButton gvRad1;
     @BindView(R.id.gv_rad2)
     RadioButton gvRad2;
+    @BindView(R.id.fragment_home_cityselector)
+    TextView mCitySelector;
     private List<String> images;
     private List<Fragment> fragments;
     private List<Fragment> fragments2;
@@ -74,6 +78,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -92,7 +97,7 @@ public class HomeFragment extends Fragment {
      */
     private void loadTabView() {
         for (int i = 0; i < 5; i++) {
-            fragments2.add(HomeFragmentVp2.getInstense(""+ i));
+            fragments2.add(HomeFragmentVp2.getInstense("" + i));
         }
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getChildFragmentManager());
         mViewpager2.setAdapter(adapter);
@@ -117,11 +122,11 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                if(position == 0){
+                if (position == 0) {
                     gvRad1.setBackgroundResource(R.drawable.myuan);
                     gvRad2.setBackgroundResource(R.drawable.nyuan);
                 }
-                if(position == 1){
+                if (position == 1) {
                     gvRad2.setBackgroundResource(R.drawable.myuan);
                     gvRad1.setBackgroundResource(R.drawable.nyuan);
                 }
@@ -160,6 +165,7 @@ public class HomeFragment extends Fragment {
     }
 
     @OnClick({R.id.fragment_home_search,
+            R.id.fragment_home_cityselector,
             R.id.fragment_home_xiaoxi,
             R.id.fragment_home_saosao,
             R.id.fragment_home_fuli,
@@ -167,6 +173,10 @@ public class HomeFragment extends Fragment {
             R.id.nearby_map})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.fragment_home_cityselector:
+                Intent intent = new Intent(getContext(), CityCheckActivity.class);
+                startActivityForResult(intent, 366);
+                break;
             case R.id.fragment_home_search:
                 break;
             case R.id.fragment_home_xiaoxi:
@@ -211,6 +221,18 @@ public class HomeFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             return titles[position];
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 366 ) {
+            Log.e("-=====", "onActivityResult: "+ 111 );
+            String city = data.getStringExtra("city");
+            if (city != null) {
+                mCitySelector.setText(city);
+            }
         }
     }
 }
