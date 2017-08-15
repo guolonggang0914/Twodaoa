@@ -54,7 +54,7 @@
         <activity android:name=".view.activity.NumberActivity" />
         <activity android:name=".view.activity.ShoushiPwdActivity" />
         <activity android:name=".view.activity.AnQuanActivity" />
-        <activity android:name=".view.activity.GuanYuActivity"></activity>
+        <activity android:name=".view.activity.GuanYuActivity"/>
         <!-- 注册SDKActivity -->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -70,9 +70,6 @@
         <activity android:name="com.tencent.connect.common.AssistActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:screenOrientation="portrait"/>
-
-        <activity android:name=".view.activity.LoginActivity" />
-        <activity android:name=".view.activity.RegisterActivity" />
         <activity android:name=".view.activity.CityCheckActivity"></activity>
     </application>
 

@@ -227,7 +227,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 366) {
+        if(resultCode == 366 ) {
             Log.e("-=====", "onActivityResult: "+ 111 );
             String city = data.getStringExtra("city");
             if (city != null) {
