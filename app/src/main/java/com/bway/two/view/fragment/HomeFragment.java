@@ -1,6 +1,7 @@
 package com.bway.two.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -18,6 +19,7 @@ import android.widget.RadioButton;
 import com.bumptech.glide.Glide;
 import com.bway.two.R;
 import com.bway.two.utils.ImageShowUtils.MyViewPager;
+import com.bway.two.view.activity.CityCheckActivity;
 import com.bway.two.view.adapter.HomeVpAdapter;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -160,6 +162,7 @@ public class HomeFragment extends Fragment {
     }
 
     @OnClick({R.id.fragment_home_search,
+            R.id.fragment_home_cityselector,
             R.id.fragment_home_xiaoxi,
             R.id.fragment_home_saosao,
             R.id.fragment_home_fuli,
@@ -167,6 +170,10 @@ public class HomeFragment extends Fragment {
             R.id.nearby_map})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.fragment_home_cityselector:
+                Intent intent = new Intent(getContext(), CityCheckActivity.class);
+                startActivity(intent);
+                break;
             case R.id.fragment_home_search:
                 break;
             case R.id.fragment_home_xiaoxi:
