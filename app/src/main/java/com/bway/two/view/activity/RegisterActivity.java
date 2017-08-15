@@ -1,5 +1,6 @@
 package com.bway.two.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -77,7 +78,7 @@ public class RegisterActivity extends BaseActivity implements IMLogin<RegisterBe
                map.put("type",1);
                map.put("merchant",0);
                presenter.loadUrlbypost(url,map,MESSAGE);
-
+              changeBtnGetCode();
            }
        });
         zhuce_tijiao.setOnClickListener(new View.OnClickListener() {
@@ -123,6 +124,7 @@ public class RegisterActivity extends BaseActivity implements IMLogin<RegisterBe
        if (code==REGISTER){
            if (registerBean.getCode().equals("1000")){
                Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
+               finish();
            }else {
                Toast.makeText(RegisterActivity.this,"手机号或验证码错误",Toast.LENGTH_SHORT).show();
            }

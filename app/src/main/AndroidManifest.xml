@@ -53,7 +53,7 @@
         <activity android:name=".view.activity.ZhangHaoLoginActivity" />
         <activity android:name=".view.activity.NumberActivity" />
         <activity android:name=".view.activity.ShoushiPwdActivity" />
-        <activity android:name=".view.activity.UserActivity" />
+        <activity android:name=".view.activity.AnQuanActivity" />
         <activity android:name=".view.activity.GuanYuActivity"></activity>
         <!-- 注册SDKActivity -->
         <activity
