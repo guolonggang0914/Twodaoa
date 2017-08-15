@@ -9,7 +9,7 @@ package com.bway.two.view.IMview;
 
 public interface IMLogin<T> {
 
-    void onSucceed(T t);
+    void onSucceed(T t,int code);
     void onError(int code,String err);
     void checkInfo(boolean isNull,String msg);
 

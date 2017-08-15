@@ -7,10 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bway.two.R;
+import com.bway.two.model.bean.FirstEvent;
+import com.bway.two.view.activity.GuanYuActivity;
 import com.bway.two.view.activity.LoginActivity;
+import com.bway.two.view.activity.UserActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * @类的用途:
@@ -21,10 +29,14 @@ import com.bway.two.view.activity.LoginActivity;
 public class MineFragment extends Fragment implements View.OnClickListener {
 
     private TextView min_login;
+    private LinearLayout min_ll;
+    private TextView username;
+    private TextView guanyu;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        EventBus.getDefault().register(this);
         return inflater.inflate(R.layout.fragmet_min,container,false);
     }
 
@@ -36,7 +48,12 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
     private void initView() {
         min_login = getView().findViewById(R.id.min_login);
+        min_ll = getView().findViewById(R.id.min_llusername);
+        username = getView().findViewById(R.id.min_username);
+        guanyu = getView().findViewById(R.id.min_guanyu);
+        username.setOnClickListener(this);
         min_login.setOnClickListener(this);
+        guanyu.setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +63,25 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent  intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.min_username:
+                startActivity(new Intent(getActivity(), UserActivity.class));
+                break;
+            case R.id.min_guanyu:
+                startActivity(new Intent(getActivity(), GuanYuActivity.class));
+                break;
         }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(FirstEvent event) {
+               if (event.getMsg() != null){
+                     min_login.setVisibility(View.GONE);
+                    min_ll.setVisibility(View.VISIBLE);
+                   username.setText(event.getMsg());
+        }
+             }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);//反注册EventBus
     }
 }
