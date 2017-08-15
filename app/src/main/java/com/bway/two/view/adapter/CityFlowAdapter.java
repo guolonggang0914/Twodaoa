@@ -41,7 +41,6 @@ public class CityFlowAdapter extends BaseAdapter implements StickyListHeadersAda
             // 如果索引map中不包含这个字母，就添加进索引map，key是字母，value是第一次出现的位置
             if (!indexMap.containsKey(index)) {
                 indexMap.put(index, i);
-                Log.e("------", "setIndex: "+ index + "," + i);
             }
         }
     }

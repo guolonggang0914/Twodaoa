@@ -9,12 +9,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bway.two.R;
@@ -32,8 +34,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-
-import static com.baidu.location.d.j.v;
 
 /**
  * Created by 卢程
@@ -67,6 +67,8 @@ public class HomeFragment extends Fragment {
     RadioButton gvRad1;
     @BindView(R.id.gv_rad2)
     RadioButton gvRad2;
+    @BindView(R.id.fragment_home_cityselector)
+    TextView mCitySelector;
     private List<String> images;
     private List<Fragment> fragments;
     private List<Fragment> fragments2;
@@ -76,6 +78,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
@@ -94,7 +97,7 @@ public class HomeFragment extends Fragment {
      */
     private void loadTabView() {
         for (int i = 0; i < 5; i++) {
-            fragments2.add(HomeFragmentVp2.getInstense(""+ i));
+            fragments2.add(HomeFragmentVp2.getInstense("" + i));
         }
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getChildFragmentManager());
         mViewpager2.setAdapter(adapter);
@@ -119,11 +122,11 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                if(position == 0){
+                if (position == 0) {
                     gvRad1.setBackgroundResource(R.drawable.myuan);
                     gvRad2.setBackgroundResource(R.drawable.nyuan);
                 }
-                if(position == 1){
+                if (position == 1) {
                     gvRad2.setBackgroundResource(R.drawable.myuan);
                     gvRad1.setBackgroundResource(R.drawable.nyuan);
                 }
@@ -172,7 +175,7 @@ public class HomeFragment extends Fragment {
         switch (view.getId()) {
             case R.id.fragment_home_cityselector:
                 Intent intent = new Intent(getContext(), CityCheckActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 366);
                 break;
             case R.id.fragment_home_search:
                 break;
@@ -218,6 +221,18 @@ public class HomeFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
             return titles[position];
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 366) {
+            Log.e("-=====", "onActivityResult: "+ 111 );
+            String city = data.getStringExtra("city");
+            if (city != null) {
+                mCitySelector.setText(city);
+            }
         }
     }
 }

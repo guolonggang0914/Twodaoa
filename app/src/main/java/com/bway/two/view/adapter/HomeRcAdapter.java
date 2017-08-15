@@ -5,11 +5,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bway.two.R;
 import com.bway.two.model.bean.RcData;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 /**
@@ -18,6 +23,7 @@ import java.util.List;
  */
 
 public class HomeRcAdapter extends RecyclerView.Adapter<HomeRcAdapter.ViewHolder> {
+
 
     private Context context;
     private List<RcData> mList;
@@ -35,21 +41,30 @@ public class HomeRcAdapter extends RecyclerView.Adapter<HomeRcAdapter.ViewHolder
     }
 
 
-
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
+        holder.homeRcJifen.setText("" + (15 + position) +"%");
+        holder.homeRcMoney.setText("￥"+ (45 + position) + "/人");
+        holder.homeRcTitle.setText("味多美（安贞店）");
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
-
+    class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.home_rc_head)
+        ImageView homeRcHead;
+        @BindView(R.id.home_rc_title)
+        TextView homeRcTitle;
+        @BindView(R.id.home_rc_money)
+        TextView homeRcMoney;
+        @BindView(R.id.home_rc_jifen)
+        TextView homeRcJifen;
         public ViewHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

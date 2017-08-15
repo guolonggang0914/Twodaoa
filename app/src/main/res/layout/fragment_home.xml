@@ -219,9 +219,26 @@
 
             </LinearLayout>
 
-            <include layout="@layout/include_tablayout" />
+            <android.support.design.widget.TabLayout
+                android:id="@+id/fragment_home_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                banners:tabBackground="@drawable/tablayout_selector"
+                banners:tabIndicatorHeight="0dp"></android.support.design.widget.TabLayout>
+
+
         </android.support.design.widget.AppBarLayout>
 
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            banners:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <com.bway.two.utils.ImageShowUtils.MyViewPager
+                android:id="@+id/fragment_home_viewpager2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.bway.two.utils.ImageShowUtils.MyViewPager>
+        </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
 

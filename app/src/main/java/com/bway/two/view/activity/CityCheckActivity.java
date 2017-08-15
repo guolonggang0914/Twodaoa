@@ -1,6 +1,9 @@
 package com.bway.two.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -72,6 +75,16 @@ public class CityCheckActivity extends BaseActivity {
                 cityFlowAdapter = new CityFlowAdapter(CityCheckActivity.this, cityList);
                 cityFlowAdapter.setIndex();
                 slvAddress.setAdapter(cityFlowAdapter);
+                slvAddress.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Intent intent = getIntent();
+                        intent.putExtra("city", cityList.get(i).getAreaname());
+                        CityCheckActivity.this.setResult(366, intent);
+                        finish();
+                    }
+                });
+
             }
 
             @Override

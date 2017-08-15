@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.Date;
 
 /**
- * Created by WuXirui
+ * Created by
  * Create Time: 2017/6/23
  * Description:
  */
@@ -113,11 +113,11 @@ public class SlideBar extends View {
 
         for (int i = 0; i < letters.length; i++) {
             Paint paint = new Paint();
-            paint.setColor(Color.parseColor("#FFFFFF"));
-            paint.setTextSize(30);
+            paint.setColor(Color.parseColor("#c20000"));
+            paint.setTextSize(20);
             // 字符占的宽度
             float f = paint.measureText(letters[i]);
-            float xPos = width / 2 - f / 2;
+            float xPos = f  ;
             float yPos = singleHeight * (i + 1);
             if (i == choose) {
                 paint.setColor(Color.parseColor("#c20000"));
