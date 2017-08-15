@@ -1,12 +1,6 @@
 package com.bway.two.presenter;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.bway.two.model.bean.RegisterBean;
 import com.bway.two.model.net.okhttp.HttpManager;

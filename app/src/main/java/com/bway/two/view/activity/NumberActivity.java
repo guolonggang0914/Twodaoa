@@ -14,7 +14,6 @@ import com.bway.two.model.bean.FirstEvent;
 import com.bway.two.model.bean.RegisterBean;
 import com.bway.two.presenter.RegisterPresenter;
 import com.bway.two.view.IMview.IMLogin;
-import com.bway.two.view.IMview.IMLoginTwo;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -24,6 +23,8 @@ import java.util.Timer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+//import org.greenrobot.eventbus.EventBus;
 
 
 public class NumberActivity extends BaseActivity implements View.OnClickListener, IMLogin<RegisterBean>{

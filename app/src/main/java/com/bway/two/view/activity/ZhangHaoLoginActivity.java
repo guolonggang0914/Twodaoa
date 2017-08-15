@@ -1,9 +1,5 @@
 package com.bway.two.view.activity;
 
-import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +15,6 @@ import com.bway.two.model.bean.FirstEvent;
 import com.bway.two.model.bean.LoginBean;
 import com.bway.two.presenter.LoginPresenter;
 import com.bway.two.view.IMview.IMLoginTwo;
-import com.bway.two.view.fragment.MineFragment;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -29,8 +24,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.bway.two.R.id.zuce_phone;
-import static com.bway.two.R2.id.zhuce_tongyi;
+//import org.greenrobot.eventbus.EventBus;
 
 public class ZhangHaoLoginActivity extends BaseActivity implements View.OnClickListener, IMLoginTwo<LoginBean>{
 

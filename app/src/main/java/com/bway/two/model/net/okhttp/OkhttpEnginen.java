@@ -131,7 +131,7 @@ public class OkhttpEnginen implements IHttpEngien {
                         Gson gson = new Gson();
                         Class<?> clazz = GenericUtil.getSuperGenericClass(callBack.getClass());
                         callBack.onSuccess(gson.fromJson(result, clazz));
-                        //
+
                     }
                 });
             }

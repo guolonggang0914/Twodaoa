@@ -6,6 +6,6 @@
     <color name="colorTextSelect">#CC2E2E</color>
     <color name="colorTextunSelect">#949494</color>
     <color name="colorHome">#F2F4F5</color>
-
+    <color name="colorRed">#c20000</color>
     <color name="colorWhite">#ffffff</color>
 </resources>
