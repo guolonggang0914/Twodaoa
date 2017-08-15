@@ -11,12 +11,12 @@ public class RegisterBean {
     /**
      * code : 1000
      * descirption : 系统处理成功
-     * object : {"phone":"18335473224","createTime":1502622465000,"nickname":"大道用户3224","userId":126,"picture":"","token":"3a2ef4a2a7f26a43349cea6c1d9464a7"}
+     * object :
      */
 
     private String code;
     private String descirption;
-    private ObjectBean object;
+    private String object;
 
     public String getCode() {
         return code;
@@ -34,77 +34,11 @@ public class RegisterBean {
         this.descirption = descirption;
     }
 
-    public ObjectBean getObject() {
+    public String getObject() {
         return object;
     }
 
-    public void setObject(ObjectBean object) {
+    public void setObject(String object) {
         this.object = object;
-    }
-
-    public static class ObjectBean {
-        /**
-         * phone : 18335473224
-         * createTime : 1502622465000
-         * nickname : 大道用户3224
-         * userId : 126
-         * picture :
-         * token : 3a2ef4a2a7f26a43349cea6c1d9464a7
-         */
-
-        private String phone;
-        private long createTime;
-        private String nickname;
-        private int userId;
-        private String picture;
-        private String token;
-
-        public String getPhone() {
-            return phone;
-        }
-
-        public void setPhone(String phone) {
-            this.phone = phone;
-        }
-
-        public long getCreateTime() {
-            return createTime;
-        }
-
-        public void setCreateTime(long createTime) {
-            this.createTime = createTime;
-        }
-
-        public String getNickname() {
-            return nickname;
-        }
-
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
-        }
-
-        public int getUserId() {
-            return userId;
-        }
-
-        public void setUserId(int userId) {
-            this.userId = userId;
-        }
-
-        public String getPicture() {
-            return picture;
-        }
-
-        public void setPicture(String picture) {
-            this.picture = picture;
-        }
-
-        public String getToken() {
-            return token;
-        }
-
-        public void setToken(String token) {
-            this.token = token;
-        }
     }
 }

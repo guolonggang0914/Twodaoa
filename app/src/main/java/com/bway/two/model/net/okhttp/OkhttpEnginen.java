@@ -16,6 +16,7 @@ import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -80,19 +81,33 @@ public class OkhttpEnginen implements IHttpEngien {
 
     @Override
     public void post(String url, Map<String, Object> params, final CallBack callBack) {
+        RequestBody requestBody = null;
 
-        FormBody.Builder body = new FormBody.Builder();
-
-        if (null != params) {
-            for (Map.Entry<String, Object> entry:params.entrySet()) {
-                body.add(entry.getKey(), (String) entry.getValue());
-                Log.e("body", "post: "+entry.getKey()+"/"+(String) entry.getValue() );
+        FormBody.Builder builder = new FormBody.Builder();
+        for (Map.Entry<String, Object> entry : params.entrySet()) {
+            String key = entry.getKey().toString();
+            String value = null;
+            if (entry.getValue() == null) {
+                value = "";
+            } else {
+                value = entry.getValue().toString();
             }
+            Log.e("=====", "getDataPostFromServer: " + key + " ," + value);
+            builder.add(key, value);
         }
+        requestBody = builder.build();
+
+
+//        if (null != params) {
+//            for (Map.Entry<String, Object> entry:params.entrySet()) {
+//                body.add(entry.getKey(), (String) entry.getValue());
+//                Log.e("body", "post: "+entry.getKey()+"/"+(String) entry.getValue() );
+//            }
+//        }
 
         Request request = new Request.Builder()
                 .url(url)
-                .post(body.build())
+                .post(requestBody)
                 .build();
 
         Call call = client.newCall(request);
