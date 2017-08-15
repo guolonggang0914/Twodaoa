@@ -3,8 +3,12 @@ package com.bway.two.presenter;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.bway.two.model.bean.LoginBean;
+import com.bway.two.model.net.okhttp.HttpManager;
 import com.bway.two.utils.NetUtils.NetWorkUtils;
 import com.bway.two.view.IMview.IMLogin;
+import com.bway.two.view.IMview.IMLoginTwo;
+import com.bway.two.view.IMview.customcallback.EntityCallBack;
 
 import java.util.Map;
 
@@ -17,13 +21,13 @@ import java.util.Map;
 
 public class LoginPresenter {
 
-    private IMLogin imLogin;
+    private IMLoginTwo imLogin;
     private Context context;
     public LoginPresenter(Context context){
         this.context = context;
     }
     //连接
-    public void onAttach(IMLogin imLogin){
+    public void onAttach(IMLoginTwo imLogin){
         this.imLogin = imLogin;
     }
     //解除连接
@@ -32,19 +36,20 @@ public class LoginPresenter {
             imLogin=null;
         }
     }
-    public <T>void loadUrlbyget(String url, Map<String,Object> map){
-        /*HttpManager.getInstance().get(url, map, new EntityCallBack<>() {
+    public <T>void loadUrlbyPost(String url, Map<String,Object> map){
+        HttpManager.getInstance().post(url, map, new EntityCallBack<LoginBean>() {
+
 
             @Override
-            public void onSuccess(Object o) {
-                imLogin.onSucceed(o);
+            public void onSuccess(LoginBean loginBean) {
+                imLogin.onSucceed(loginBean);
             }
 
             @Override
             public void onFailure(String message, int error) {
                 imLogin.onError(error,message);
             }
-        });*/
+        });
     }
 
 
