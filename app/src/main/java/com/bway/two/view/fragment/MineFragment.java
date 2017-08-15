@@ -14,7 +14,7 @@ import com.bway.two.R;
 import com.bway.two.model.bean.FirstEvent;
 import com.bway.two.view.activity.GuanYuActivity;
 import com.bway.two.view.activity.LoginActivity;
-import com.bway.two.view.activity.UserActivity;
+import com.bway.two.view.activity.AnQuanActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -32,6 +32,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private LinearLayout min_ll;
     private TextView username;
     private TextView guanyu;
+    private TextView anquan;
 
     @Nullable
     @Override
@@ -51,9 +52,11 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         min_ll = getView().findViewById(R.id.min_llusername);
         username = getView().findViewById(R.id.min_username);
         guanyu = getView().findViewById(R.id.min_guanyu);
+        anquan = getView().findViewById(R.id.min_anquan);
         username.setOnClickListener(this);
         min_login.setOnClickListener(this);
         guanyu.setOnClickListener(this);
+        anquan.setOnClickListener(this);
     }
 
     @Override
@@ -63,8 +66,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent  intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.min_username:
-                startActivity(new Intent(getActivity(), UserActivity.class));
+            case R.id.min_anquan:
+                startActivity(new Intent(getActivity(), AnQuanActivity.class));
                 break;
             case R.id.min_guanyu:
                 startActivity(new Intent(getActivity(), GuanYuActivity.class));
