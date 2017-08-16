@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
@@ -36,6 +37,7 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.bway.two.R;
+import com.bway.two.model.map.MapBiaoji;
 import com.bway.two.view.adapter.ContentPageAdapter;
 
 import java.util.ArrayList;
@@ -246,19 +248,19 @@ public class NearbyFragment extends Fragment {
         //定义Maker坐标点
         LatLng point = new LatLng(lat, lon);
         //生成一个TextView用户在地图中显示InfoWindow
-//        RadioButton checkBox = new RadioButton(getActivity().getApplicationContext());
-//        checkBox.setButtonDrawable(null);
-//        checkBox.setCompoundDrawables(null, R.drawable.fujindingwei, null, null);
-//        Bitmap viewBitmap = getViewBitmap(location);
-        //构建Marker图标
-        //调用百度地图提供的api获取刚转换的Bitmap
-//        BitmapDescriptor bitmapDescriptor=BitmapDescriptorFactory.fromBitmap(viewBitmap);
+        MapBiaoji mapBiaoji = new MapBiaoji(getActivity());
+        TextView txt = mapBiaoji.findViewById(R.id.txt_biaozhu);
+        txt.setText(name);
+        Bitmap viewBitmap = getViewBitmap(mapBiaoji);
+//        构建Marker图标
+//        调用百度地图提供的api获取刚转换的Bitmap
+        BitmapDescriptor bitmapDescriptor=BitmapDescriptorFactory.fromBitmap(viewBitmap);
         BitmapDescriptor bitmap = BitmapDescriptorFactory
                 .fromResource(R.drawable.fujindingwei);
         //构建MarkerOption，用于在地图上添加Marker
         OverlayOptions option = new MarkerOptions()
                 .position(point)
-                .icon(bitmap);
+                .icon(bitmapDescriptor);
 
         //在地图上添加Marker，并显示
         baiduMap.addOverlay(option);
