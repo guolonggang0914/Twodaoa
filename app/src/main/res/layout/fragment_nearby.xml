@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    xmlns:sothree="http://schemas.android.com/tools"
+    android:gravity="bottom"
+    sothree:umanoPanelHeight="68dp"
+    sothree:umanoShadowHeight="4dp">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.baidu.mapapi.map.MapView>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:orientation="vertical"
+        >
 
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="130dp">-->
-
-            <!--<com.baidu.mapapi.map.MapView-->
-                <!--android:id="@+id/map_top"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"></com.baidu.mapapi.map.MapView>-->
-
-            <!--<com.bway.two.utils.ImageShowUtils.MyImageView-->
-                <!--android:layout_width="30dp"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_marginRight="15dp"-->
-                <!--android:layout_marginTop="15dp"-->
-                <!--android:background="@color/colorWhite"-->
-                <!--android:src="@drawable/map_sousuo" />-->
-        <!--</RelativeLayout>-->
 
         <include layout="@layout/includ_nearby_wangpu"></include>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/fragment_home_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x88"
+            android:background="@color/colorWhite"
+            app:tabBackground="@drawable/tablayout_selector"
+            app:tabIndicatorHeight="0dp"
+            app:tabSelectedTextColor="@color/colorRed"
+            app:tabTextColor="#333333"></android.support.design.widget.TabLayout>
 
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+            <android.support.v4.view.ViewPager
+                android:id="@+id/fragment_home_viewpager2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
-
-</ScrollView>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

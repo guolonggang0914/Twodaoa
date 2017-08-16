@@ -22,4 +22,7 @@
         <attr name="count" />
         <attr name="tryTimes" />
     </declare-styleable>
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/x28</item>
+    </style>
 </resources>
