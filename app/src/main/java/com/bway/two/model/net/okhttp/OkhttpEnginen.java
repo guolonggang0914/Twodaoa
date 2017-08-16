@@ -27,6 +27,9 @@ import okhttp3.Response;
 
 public class OkhttpEnginen implements IHttpEngien {
     private OkHttpClient client;
+    private String token;
+    private Request request;
+
     public OkhttpEnginen () {
         client = new OkHttpClient();
     }
@@ -93,9 +96,19 @@ public class OkhttpEnginen implements IHttpEngien {
                 value = entry.getValue().toString();
             }
             Log.e("=====", "getDataPostFromServer: " + key + " ," + value);
-            builder.add(key, value);
+            if("token".equals(key))
+            {
+                key=token;
+            }
+            else
+            {
+                builder.add(key, value);
+            }
+
+
         }
         requestBody = builder.build();
+
 
 
 //        if (null != params) {
@@ -104,11 +117,24 @@ public class OkhttpEnginen implements IHttpEngien {
 //                Log.e("body", "post: "+entry.getKey()+"/"+(String) entry.getValue() );
 //            }
 //        }
+        Request request=null;
+        if(token==null)
+        {
+          request = new Request.Builder()
+                    .url(url)
+                    .post(requestBody)
+                    .build();
+        }
+        else
+        {
+            request = new Request.Builder()
+                    .url(url)
+                    .addHeader("token",token)
+                    .post(requestBody)
+                    .build();
+        }
 
-        Request request = new Request.Builder()
-                .url(url)
-                .post(requestBody)
-                .build();
+
 
         Call call = client.newCall(request);
         call.enqueue(new Callback() {

@@ -52,6 +52,7 @@ anquanFh.setOnClickListener(this);
             case R.id.anquan_fh:
                 finish();
                 break;
+
         }
     }
 }

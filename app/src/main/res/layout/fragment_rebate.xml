@@ -1,80 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x390"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
         android:orientation="vertical"
-        android:background="#00f"
+        android:background="#435C94"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:layout_marginTop="@dimen/x80"
-            android:paddingLeft="@dimen/x30"
-            android:textSize="@dimen/x28"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="15dp"
+            android:textSize="14sp"
             android:text="@string/jin_e"/>
         <TextView
+            android:id="@+id/fragment_rebate_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:textSize="@dimen/x80"
-            android:layout_marginTop="@dimen/x44"
-            android:text="@string/jia_ge"
-            android:paddingLeft="@dimen/x30"
+            android:textSize="40sp"
+            android:layout_marginTop="22dp"
+            android:paddingLeft="15dp"
             />
-         <LinearLayout
+         <RelativeLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:orientation="horizontal">
+           >
              <TextView
+                 android:id="@+id/fragment_rebate_textview"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:textColor="#ffffff"
-                 android:textSize="@dimen/x28"
-                 android:paddingLeft="@dimen/x30"
-                 android:layout_marginTop="@dimen/x86"
-                 android:layout_marginBottom="@dimen/x_68"
+                 android:textSize="14sp"
+                 android:paddingLeft="15dp"
+                 android:layout_marginBottom="43dp"
                  android:text="@string/qi_shu"/>
              <TextView
+                 android:id="@+id/fragment_rebate_num"
+                 android:layout_toRightOf="@+id/fragment_rebate_textview"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:layout_marginLeft="@dimen/x60"
+                 android:layout_marginLeft="30dp"
                  android:text="@string/num_shu"
                  android:textColor="#ffffff"
-                 android:textSize="@dimen/x_36"
-                 android:layout_marginBottom="@dimen/x_68"/>
+                 android:textSize="18sp"
+                 android:layout_marginBottom="34dp"/>
              <TextView
+                 android:id="@+id/fragment_rebate_query"
                  android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
                  android:textColor="#ffffff"
-                 android:layout_marginRight="@dimen/x_30"
-                 android:layout_marginBottom="@dimen/x_68"
-                 android:textSize="@dimen/x28"
+                 android:layout_marginRight="15dp"
+                 android:layout_marginBottom="34dp"
+                 android:textSize="14sp"
+                 android:layout_alignParentRight="true"
                  android:text="@string/query_num"/>
-         </LinearLayout>
+         </RelativeLayout>
 
     </LinearLayout>
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="@dimen/x_30"-->
-            <!--android:textColor="#666666"-->
-            <!--android:textSize="@dimen/x_24"-->
-            <!--android:text="@string/jin_e"></TextView>-->
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--/>-->
-    <!--</LinearLayout>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:id="@+id/fragment_rebate_ll"
+        >
+        <TextView
+            android:id="@+id/fragment_rebate_bind_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:text="@string/bang_ding"></TextView>
+        <ImageView
+            android:id="@+id/fragment_rebate_chat"
+           android:layout_marginLeft="5dp"
+            android:layout_width="25dp"
+            android:layout_toRightOf="@+id/fragment_rebate_bind_money"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/weixin"
+            />
+        <TextView
+            android:id="@+id/fragment_rebate_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_toRightOf="@+id/fragment_rebate_chat"
+            android:layout_centerVertical="true"
+            android:text="@string/wei_xin"
+            android:textColor="#666666"/>
+        <TextView
+            android:id="@+id/fragment_rebate_go_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+           android:layout_centerVertical="true"
+            android:textColor="#666666"
+            android:layout_toRightOf="@+id/fragment_rebate_weixin"
+            android:layout_marginLeft="27dp"
+            android:text="@string/go_on_bind"/>
+        <ImageView
+            android:layout_toRightOf="@+id/fragment_rebate_go_on"
+            android:layout_width="25dp"
+            android:layout_height="25dp" 
+            android:layout_marginLeft="5dp"
+            android:id="@+id/fragment_rebate_zhifu"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zhifu"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/fragment_rebate_zhifu"
+            android:text="@string/zhi_fu"
+            android:textColor="#88CBFF"
+            />
+        <TextView
+            android:id="@+id/fragment_rebate_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:textSize="12sp"
+            android:text="@string/geng_duo"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#F2F4F5"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_rebate_recyclerview">
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/fragment_rebate_show_more"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="显示更多"
+        android:clickable="true"
+        android:textColor="#435c94"
+        android:textSize="11sp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+       android:background="#F2F4F5"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        >
+        <ImageView
+            android:id="@+id/calender"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="19dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/calender" />
+        <TextView
+            android:id="@+id/txt_first"
+            android:layout_toRightOf="@+id/calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/x24"
+            android:textColor="#666666"
+            android:text="近7日有2笔返利"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="35dp"/>
+        <TextView
+            android:id="@+id/txt_230"
+            android:layout_below="@+id/txt_first"
+            android:layout_toRightOf="@+id/calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginTop="5dp"
+            android:text="5月25日（明天）返利230元"
+            android:layout_marginLeft="35dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="19dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/gengduo" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#F2F4F5"/>
+    </LinearLayout>
+    </ScrollView>
 
 
-</LinearLayout>
+   
+
+
+
+
+
+
+

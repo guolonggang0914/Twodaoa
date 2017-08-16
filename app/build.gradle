@@ -68,6 +68,10 @@ dependencies {
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.0.2'
+    repositories {
+        mavenCentral()
+    }
+    compile 'com.sothree.slidinguppanel:library:3.3.1'
 }
 dependencies {
     compile 'com.android.support.constraint:constraint-layout:+'
