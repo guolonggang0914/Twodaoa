@@ -4,12 +4,14 @@ package com.bway.two.view.activity;
   类的用途 :记录查询页面
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -37,23 +39,31 @@ public class QueryActivity extends BaseActivity {
     RadioButton queryWaitfanli;
     @BindView(R.id.query_rg)
     RadioGroup queryRg;
+    @BindView(R.id.query_fanhui)
+    ImageView imageView;
     private IntergralFragment integeral;
     private RebateslFragment rebates;
     private WaitrebateFragment wait;
     private FragmentTransaction transaction;
     private FragmentManager manager;
-
+    @Override
+    public int getLayout() {
+        return R.layout.activity_query;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
         setDefaultFragment();
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                QueryActivity.this.finish();
+            }
+        });
     }
 
-    @Override
-    public int getLayout() {
-        return R.layout.activity_query;
-    }
+
 
     @Override
     public void initView() {

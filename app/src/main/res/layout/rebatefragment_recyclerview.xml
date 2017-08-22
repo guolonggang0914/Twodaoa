@@ -59,7 +59,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:src="@drawable/ic_huawei_login_normal" />
+                />
 
             <TextView
                 android:id="@+id/fragment_rebate_tv"

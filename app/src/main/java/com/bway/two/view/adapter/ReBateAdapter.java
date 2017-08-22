@@ -22,10 +22,30 @@ import java.util.List;
  * author  郭龙刚
  */
 
-public class ReBateAdapter extends RecyclerView.Adapter {
+public class ReBateAdapter extends RecyclerView.Adapter implements View.OnClickListener {
     private Context context;
     private List<RecyclerViewItem.ObjectBean>list=new ArrayList<>();
-    //private int numitem=2;
+    private int numitem=2;
+    private MyItemClickListener mItemClickListener;
+
+    @Override
+    public void onClick(View view) {
+        if (mItemClickListener != null) {
+            mItemClickListener.onItemClick(view, (Integer) view.getTag());
+        }
+    }
+
+    //创建一个接口
+    public interface MyItemClickListener {
+        void onItemClick(View view, int postion);
+    }
+    /**
+     * 设置Item点击监听
+     * @param listener
+     */
+    public void setOnItemClickListener(MyItemClickListener listener){
+        this.mItemClickListener = listener;
+    }
     public ReBateAdapter(Context context) {
         this.context = context;
     }
@@ -33,6 +53,7 @@ public class ReBateAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view=View.inflate(context,R.layout.rebatefragment_recyclerview,null);
+        view.setOnClickListener(this);
         ViewHolder  vi=new ViewHolder(view);
         return vi;
     }
@@ -46,32 +67,29 @@ public class ReBateAdapter extends RecyclerView.Adapter {
          String datap = simpleDateFormat.format(date);
          viewHolder.textView_data.setText(datap+"总换");
          Glide.with(context).load(list.get(position).getIntegralStyle()).into(viewHolder.imageView);
-
+         viewHolder.itemView.setTag(position);
 
     }
     public void setData(List<RecyclerViewItem.ObjectBean> lists)
     {
-        this.list=lists;
+        list.addAll(lists);
     }
 
     @Override
     public int getItemCount() {
-//        if(list.size()>numitem)
-//        {
-//            return  numitem;
-//        }
-//        else
-//        {
-//            return list.size();
-//        }
-        return  list.size();
-
-
+        if(list.size()<=numitem)
+        {
+            return  numitem;
+        }
+        else
+        {
+            return list.size();
+        }
     }
-//    public void getCount(int numPosition)
-//    {
-//        numitem=numPosition;
-//    }
+    public void getCount(int numPosition)
+    {
+        numitem=numPosition;
+    }
     class ViewHolder extends RecyclerView.ViewHolder{
         private TextView textView,textView_gradle,textView_data;
         private ImageView imageView;

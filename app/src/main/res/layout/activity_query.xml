@@ -5,65 +5,74 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.bway.two.view.activity.QueryActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:id="@+id/query_fanhui"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:paddingLeft="10dp"
-            android:src="@drawable/gengduo"/>
+            android:src="@drawable/all_arrow_unlike_press" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textSize="20sp"
-            android:text="记录查询"/>
+            android:text="记录查询"
+            android:textSize="30sp" />
     </RelativeLayout>
+
     <RadioGroup
         android:id="@+id/query_rg"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="horizontal">
+
         <RadioButton
             android:id="@+id/query_jifen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:button="@null"
-            android:textColor="@drawable/jifen_item"
             android:layout_weight="1"
-            android:gravity="center"
-            android:checked="true"
             android:background="@drawable/jifen_itembackground"
-            android:text="积分记录"/>
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="积分记录"
+            android:textColor="@drawable/jifen_item"
+            android:textSize="14sp" />
+
         <RadioButton
             android:id="@+id/query_fanli"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:button="@null"
-            android:textColor="@drawable/jifen_item"
-            android:gravity="center"
+            android:layout_weight="1"
             android:background="@drawable/jifen_itembackground"
-            android:text="已返利"/>
+            android:button="@null"
+            android:gravity="center"
+            android:text="已返利"
+            android:textColor="@drawable/jifen_item"
+            android:textSize="14sp" />
+
         <RadioButton
             android:id="@+id/query_waitfanli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:button="@null"
             android:layout_weight="1"
-            android:textColor="@drawable/jifen_item"
             android:background="@drawable/jifen_itembackground"
+            android:button="@null"
             android:gravity="center"
-            android:text="待返利"/>
+            android:text="待返利"
+            android:textColor="@drawable/jifen_item"
+            android:textSize="14sp" />
     </RadioGroup>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/query_framlayout"></FrameLayout>
 
- 
+    <FrameLayout
+        android:id="@+id/query_framlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+
 </LinearLayout>

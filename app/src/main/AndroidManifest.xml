@@ -75,6 +75,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".view.activity.CityCheckActivity"></activity>
         <activity android:name=".view.activity.QueryActivity"></activity>
+        <activity android:name=".view.activity.PlanActivity"></activity>
     </application>
 
 </manifest>

@@ -108,15 +108,6 @@ public class OkhttpEnginen implements IHttpEngien {
 
         }
         requestBody = builder.build();
-
-
-
-//        if (null != params) {
-//            for (Map.Entry<String, Object> entry:params.entrySet()) {
-//                body.add(entry.getKey(), (String) entry.getValue());
-//                Log.e("body", "post: "+entry.getKey()+"/"+(String) entry.getValue() );
-//            }
-//        }
         Request request=null;
         if(token==null)
         {
